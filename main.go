@@ -11,7 +11,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "hello from the updated ipaas container :D v9.0 😭😭")
+		fmt.Fprintf(w, "hello from the updated ipaas container :D v9.1 (sheesh version)")
 	})
 
 	log.Println("starting on port 8080")
