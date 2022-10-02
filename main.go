@@ -12,7 +12,10 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "hellooo, this server is gonna exit now")
+		fmt.Fprintf(w, "hellooo, go on /die to kill me (i have a family)")
+	})
+	r.HandleFunc("/die", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "ah im dyingggg")
 		os.Exit(1)
 	})
 
