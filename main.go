@@ -52,7 +52,9 @@ func main() {
 		e, _ := strconv.Atoi(status)
 		os.Exit(e)
 	})
-
+	r.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "hi, this is the request from an endpoint")
+	})
 	log.Println("starting on port 8080")
 	log.Fatalln(http.ListenAndServe(":8080", r))
 }
