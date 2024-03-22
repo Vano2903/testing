@@ -16,7 +16,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello There")
+		fmt.Fprintf(w, "Hello There, time to do some magic stuff")
 	})
 
 	r.HandleFunc("/envs", func(w http.ResponseWriter, r *http.Request) {
