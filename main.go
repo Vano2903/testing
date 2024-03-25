@@ -19,6 +19,7 @@ func main() {
 		fmt.Fprintf(w, "Hello There, time to do some magic stuff, actually it's working :O")
 	})
 
+	
 	r.HandleFunc("/envs", func(w http.ResponseWriter, r *http.Request) {
 		//print all envs
 		fmt.Fprintf(w, "environment variables: %v", os.Environ())
