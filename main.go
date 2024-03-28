@@ -46,10 +46,9 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		log.Println("request to /")
-		fmt.Fprintf(w, "Hello There")
+		fmt.Fprintf(w, "Hello There, this is a new update")
 	})
 
-	
 	r.HandleFunc("/envs", func(w http.ResponseWriter, r *http.Request) {
 		log.Println("request to /envs")
 		log.Println("environment variables: ", os.Environ())
