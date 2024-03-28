@@ -49,6 +49,7 @@ func main() {
 		fmt.Fprintf(w, "Hello There")
 	})
 
+	
 	r.HandleFunc("/envs", func(w http.ResponseWriter, r *http.Request) {
 		log.Println("request to /envs")
 		log.Println("environment variables: ", os.Environ())
