@@ -1,4 +1,4 @@
-FROM go:1.22
+FROM golang
 
 COPY . .
 RUN go mod download
