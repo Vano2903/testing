@@ -1,0 +1,10 @@
+# this dockerignore ignores everything except go.* and main.go
+# this is a particular case for ipaas as nixpacks creates a folder
+# .nixpacks with the packages needed in the dockerfile 
+# and in this case the packages will be blocked which will lead 
+# nixpacks to fail the build process
+
+**
+
+!go.*
+!main.go
