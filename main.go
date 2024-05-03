@@ -37,7 +37,7 @@ func heavy(ctx context.Context) {
 				}
 			}
 		}()
-	// THIS IS A MAGICAL COMPILE TIME ERROR
+	}
 }
 
 func main() {
