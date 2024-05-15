@@ -56,6 +56,17 @@ func main() {
 		fmt.Fprintf(w, "environment variables: %v", os.Environ())
 	})
 
+	r.HandleFunc("/status/{status}", func(w http.ResponseWriter, r *http.Request) {
+		status, err := strconv.Atoi(mux.Vars(r)["status"])
+		if err != nil {
+			log.Println("error converting status to int: ", err)
+			fmt.Fprintf(w, "error converting status to int: %v", err)
+		}
+		log.Println("request to /status with status ", status)
+		w.WriteHeader(status)
+		fmt.Fprintf(w, "status %v", status)
+	})
+
 	r.HandleFunc("/testDb", func(w http.ResponseWriter, r *http.Request) {
 		log.Println("request to /testDb")
 		//try to pint mysql, user is root and password is set in env as db_pass
